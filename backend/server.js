@@ -7,7 +7,9 @@ const app = express()
 const PORT = process.env.PORT || 3001
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:4173'],
+  origin: process.env.CORS_ORIGIN
+    ? process.env.CORS_ORIGIN.split(',')
+    : ['http://localhost:5173', 'http://localhost:4173'],
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Authorization', 'Content-Type'],
 }))
@@ -84,8 +86,12 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Internal server error' })
 })
 
-app.listen(PORT, () => {
-  console.log(`Cruise0 API running on http://localhost:${PORT}`)
-  console.log(`Auth0 Domain:    ${process.env.AUTH0_DOMAIN}`)
-  console.log(`Auth0 Audience:  ${process.env.AUTH0_AUDIENCE}`)
-})
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Cruise0 API running on http://localhost:${PORT}`)
+    console.log(`Auth0 Domain:    ${process.env.AUTH0_DOMAIN}`)
+    console.log(`Auth0 Audience:  ${process.env.AUTH0_AUDIENCE}`)
+  })
+}
+
+module.exports = app
