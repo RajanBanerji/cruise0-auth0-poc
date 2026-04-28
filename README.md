@@ -194,11 +194,7 @@ Auth0 provides two approaches:
 
 The app can be hosted on any static + API hosting pair:
 
-| Service | Frontend | Backend |
-|---|---|---|
-| Vercel + Railway | `vercel deploy` | `railway up` |
-| Netlify + Render | Drag-and-drop build folder | Free tier available |
-| AWS S3 + Lambda | S3 static hosting | API Gateway + Lambda |
-| Heroku | Buildpack | Same dyno with a proxy |
+But I have already hosted it using Vercel - https://cruise0-auth0-poc.vercel.app
 
 Remember to update Auth0 **Allowed Callback URLs**, **Logout URLs**, and **Web Origins** with the production domain, and update the `.env` files accordingly.
+If you want to use your own desired hosting.
