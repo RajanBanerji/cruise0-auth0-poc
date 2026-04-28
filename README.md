@@ -9,16 +9,16 @@ A full-stack Proof of Concept demonstrating Auth0 identity features for Travel0'
 ## Features Implemented
 
 ### Core Requirements
-- [x] React SPA with Auth0 React SDK
-- [x] Email/password login and signup
-- [x] Google social login
-- [x] Email verification gate (unverified users see a friendly error, not the dashboard)
-- [x] Customized Universal Login (configured in Auth0 Dashboard — see below)
-- [x] Auth0 Action: adds country/country_code to user metadata and ID token from IP
+React SPA with Auth0 React SDK
+Email/password login and signup
+Google social login
+Email verification gate (unverified users see a friendly error, not the dashboard)
+Customized Universal Login (configured in Auth0 Dashboard — see below)
+Auth0 Action: adds country/country_code to user metadata and ID token from IP
 
 ### Extra Credit
-- [x] Auth0 Action: blocks disposable email signups via Disify.com (Pre-User Registration)
-- [x] Auth0 Action: enforces MFA only for non-social (email/password) users (Post-Login)
+Auth0 Action: blocks disposable email signups via Disify.com (Pre-User Registration)
+Auth0 Action: enforces MFA only for non-social (email/password) users (Post-Login)
 
 ---
 
